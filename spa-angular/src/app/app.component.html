@@ -1,0 +1,40 @@
+<div class="sidebar">
+  <ul>
+    <li>
+      <a href="/">首页</a>
+    </li>
+    <li>
+      <a href="/demoA">demoA</a>
+    </li>
+    <li>
+      <a href="/demoB">demoB</a>
+    </li>
+    <li>
+      <a href="/demoC">demoC</a>
+    </li>
+    <li>
+      <a href="/phoneList">手机号</a>
+    </li>
+    <li>
+      <a href="/heatMap">热力图</a>
+    </li>
+    <li>
+      <a href="/angular/index.html">angular</a>
+    </li>
+    <li>
+      <a href="/react/index.html">react</a>
+    </li>
+    <li>
+      <a href="/vue/index.html">vue</a>
+    </li>
+  </ul>
+</div>
+<div class="container">
+  <h1>{{title}}</h1>
+  <nav>
+    <a routerLink="/dashboard">Dashboard</a>
+    <a routerLink="/heroes">Heroes</a>
+  </nav>
+  <router-outlet></router-outlet>
+  <app-messages></app-messages>
+</div>

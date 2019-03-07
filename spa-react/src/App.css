@@ -1,0 +1,9 @@
+.sidebar {
+  width: 200px;
+  float: left;
+}
+
+.container {
+  width: 70%;
+  float: left;
+}

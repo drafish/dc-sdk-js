@@ -1,0 +1,35 @@
+<%- include('common/header', {title: title}); %>
+<h1 style="color: #ff0000;">demo C页面</h1>
+<h2>demo C页面</h2>
+<div class="div2" style="margin-bottom: 30px;">
+  <a href="http://www.baidu.com">这是百度的链接</a>
+</div>
+<div>
+  <p>下面是用于测试demoC自定义事件的按钮</p>
+  <button id="customer-button5">demoC测试事件五</button>
+  <button id="customer-button6">demoC测试事件六</button>
+</div>
+<%- include('common/demo'); %>
+<script>
+  document.getElementById("customer-button5").onclick = function () {
+    if (sdk) {
+      sdk.dispatch('click', this, {
+        type: 'demo-c-5',
+        clickCount: 1,
+        httpCode: 200,
+        serviceCode: 200
+      })
+    }
+  };
+  document.getElementById("customer-button6").onclick = function () {
+    if (sdk) {
+      sdk.dispatch('click', this, {
+        type: 'demo-c-6',
+        clickCount: 1,
+        httpCode: 200,
+        serviceCode: 200
+      })
+    }
+  };
+</script>
+<%- include('common/footer'); %>

@@ -1,0 +1,34 @@
+<%- include('common/header', {title: title}); %>
+<div>
+  <table>
+    <caption>手机号采集测试</caption>
+    <tr>
+      <td>100</td>
+      <td>200</td>
+      <td>300</td>
+    </tr>
+    <tr>
+      <td>400</td>
+      <td>500</td>
+      <td>600</td>
+    </tr>
+    <tr>
+      <td>13333333333</td>
+      <td>14444444444</td>
+      <td>15555555555</td>
+    </tr>
+    <tr>
+      <td>17777777777</td>
+      <td>18888888888</td>
+      <td>18888888888</td>
+    </tr>
+    <tr>
+      <td>17777777777000000000</td>
+      <td>666666666618888888888</td>
+    </tr>
+  </table>
+</div>
+<script>
+  localStorage.setItem('dcp_collect_phone', true)
+</script>
+<%- include('common/footer'); %>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+	<title>Title</title>
+	<script>
+		function getDeviceId () {
+			return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+				var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+				return v.toString(16);
+			});
+		};
+
+		function addEvent (target, type, handler) {
+			if (target.addEventListener) {
+				target.addEventListener(type, handler, false)
+			} else {
+				target.attachEvent('on' + type,
+					function (event) {
+						return handler.call(target, event)
+					}, false)
+			}
+		}
+
+		var hasCreated = false
+		var _deviceId = ''
+		if (document.cookie) {
+			document.cookie.split(';').forEach(function (i) {
+				if (i.indexOf('deviceId') > -1) {
+					hasCreated = true
+					_deviceId = i.split('=')[1]
+				}
+			})
+		}
+
+		if (!_deviceId && localStorage.getItem('deviceId')) {
+			hasCreated = true
+			_deviceId = localStorage.getItem('deviceId')
+		}
+
+
+		if (!hasCreated) {
+			_deviceId = getDeviceId()
+			document.cookie = 'deviceId=' + _deviceId
+			localStorage.setItem('deviceId', _deviceId)
+		}
+
+		//回调函数
+		function receiveMessageFromIndex(event) {
+			console.log('receiveMessageFromIndex', event)
+			parent.postMessage(JSON.stringify({ deviceId: _deviceId, type: 'deviceId' }), '*');
+		}
+		//监听message事件
+		addEvent(window, "message", receiveMessageFromIndex);
+	</script>
+</head>
+
+<body>
+	获取设备ID
+</body>
+
+</html>
