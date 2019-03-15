@@ -60,7 +60,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/drafish/DataCF.git"
+    "url": "git+https://github.com/xtTech/dc-sdk-js.git"
   },
   "author": "drafish",
   "contributors": [
@@ -72,7 +72,7 @@
   "company": "xtTech",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/drafish/DataCF/issues"
+    "url": "https://github.com/xtTech/dc-sdk-js/issues"
   },
-  "homepage": "https://github.com/drafish/DataCF#readme"
+  "homepage": "https://github.com/xtTech/dc-sdk-js#readme"
 }
