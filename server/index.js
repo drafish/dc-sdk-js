@@ -9,7 +9,11 @@ const initWs = require('./ws')
 
 app.use(static(path.join(__dirname, '../dist')))
 console.log(path.join(__dirname, '../dist'))
-app.use(bodyParser());
+app.use(bodyParser({
+  detectJSON: function (ctx) {
+    return ctx.path === '/api';
+  }
+}));
 app.use(views(path.join(__dirname, './view'), {
   extension: 'ejs'
 }))

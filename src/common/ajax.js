@@ -10,6 +10,7 @@ export default class Ajax {
 
       // XDomainRequest可以支持到IE8以下的浏览器，但我懒得测了，所以干脆写死了，IE8以下都不管了
       if ([8, 9].indexOf(ieVersion) > -1) {
+        console.log('use XDomainRequest')
         xhr = new XDomainRequest()
       }
     } else {
