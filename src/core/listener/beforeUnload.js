@@ -26,7 +26,7 @@ export default class BeforeUnload extends Listener {
     })
 
     this.ctx.heatMap.clear()
-    this.ctx.unload.clear()
+    this.ctx.phoneList.clear()
     this.ctx.message.remove()
   }
 }
