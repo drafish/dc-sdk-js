@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "一个基于浏览器环境的数据采集SDK",
   "scripts": {
-    "start": "webpack-dev-server --open --config config/webpack.dev.js",
+    "dev": "webpack-dev-server --open --config config/webpack.dev.js",
     "build": "cross-env NODE_ENV='prod' webpack --config config/webpack.prod.js",
     "build:test": "cross-env NODE_ENV='test' webpack --config config/webpack.prod.js",
     "test": "mocha --require @babel/register",
